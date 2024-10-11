@@ -3,12 +3,12 @@
 #include<time.h>
 #include<stdbool.h>
 
-// ƒvƒƒgƒ^ƒCƒvéŒ¾
+// ï¿½vï¿½ï¿½ï¿½gï¿½^ï¿½Cï¿½vï¿½éŒ¾
 extern unsigned char place_feeling_chack(void);
 
 /************************************************
-PurposeF‚Ç‚±‚Éˆù‚İ‚És‚­‚©ƒ`ƒFƒbƒN
-returnFˆù‚ŞêŠ
+Purposeï¿½Fï¿½Ç‚ï¿½ï¿½Éˆï¿½ï¿½İ‚Ésï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
+returnï¿½Fï¿½ï¿½ï¿½ŞêŠ
 ************************************************/
 unsigned char place_feeling_chack(void)
 {
@@ -18,5 +18,6 @@ unsigned char place_feeling_chack(void)
     scanf("%d", &place_feeling);
 
     return place_feeling;
+    
 }
 
