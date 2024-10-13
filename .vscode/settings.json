@@ -1,5 +1,6 @@
 {
     "files.associations": {
-        "judge_func_if.h": "c"
+        "judge_func_if.h": "c",
+        "stdio.h": "c"
     }
 }

@@ -4,7 +4,7 @@
 #include<stdbool.h>
 #include<Windows.h>
 
-#include "judge_func.c"
+#include "user_input_if.h"
 
 enum {
     PLACE_FEELING_UMEDA = 0,
@@ -30,7 +30,7 @@ int main(void)
     unsigned char place_feeling = 0;
     unsigned char genre_feeling = 0;
     
-    place_feeling = place_feeling_chack();  // 地域指定
+    place_feeling = user_input_place_feeling();  // 地域指定
 
     switch (place_feeling){
         case PLACE_FEELING_UMEDA:

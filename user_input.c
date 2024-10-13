@@ -3,14 +3,17 @@
 #include<time.h>
 #include<stdbool.h>
 
-// ï¿½vï¿½ï¿½ï¿½gï¿½^ï¿½Cï¿½vï¿½éŒ¾
-extern unsigned char place_feeling_chack(void);
+// ƒvƒƒgƒ^ƒCƒvéŒ¾
+bool user_input_purpose_of_use(void);
+unsigned char user_input_place_feeling(void);
+unsigned char user_input_genre_feeling(void);
+
 
 /************************************************
-Purposeï¿½Fï¿½Ç‚ï¿½ï¿½Éˆï¿½ï¿½İ‚Ésï¿½ï¿½ï¿½ï¿½ï¿½`ï¿½Fï¿½bï¿½N
-returnï¿½Fï¿½ï¿½ï¿½ŞêŠ
+PurposeFƒ†[ƒU“ü—Í_’nˆæw’è
+returnFˆù‚İ‚És‚«‚½‚¢’nˆæ
 ************************************************/
-unsigned char place_feeling_chack(void)
+unsigned char user_input_place_feeling(void)
 {
     unsigned char place_feeling;
 
