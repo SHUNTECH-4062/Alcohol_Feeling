@@ -4,13 +4,16 @@
 #include<stdbool.h>
 
 // プロトタイプ宣言
-extern unsigned char place_feeling_chack(void);
+bool user_input_purpose_of_use(void);
+unsigned char user_input_place_feeling(void);
+unsigned char user_input_genre_feeling(void);
+
 
 /************************************************
-Purpose：どこに飲みに行くかチェック
-return：飲む場所
+Purpose：ユーザ入力_地域指定
+return：飲みに行きたい地域
 ************************************************/
-unsigned char place_feeling_chack(void)
+unsigned char user_input_place_feeling(void)
 {
     unsigned char place_feeling;
 
@@ -18,5 +21,6 @@ unsigned char place_feeling_chack(void)
     scanf("%d", &place_feeling);
 
     return place_feeling;
+    
 }
 
