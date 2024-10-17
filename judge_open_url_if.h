@@ -1,6 +1,5 @@
 /************************************************
-File_Nameï¼šjudge_open_url.h
+File_NameFjudge_open_url.h
 ************************************************/
-
-/* é–¢æ•°ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ */
-extern void judge_open_url(unsigned char purpose_of_use, unsigned char charplace_feeling, unsigned char genre_feeling);
+/* ŠÖ”ƒvƒƒgƒ^ƒCƒvéŒ¾ */
+extern void admin_judge_open_url(unsigned char purpose_of_use, unsigned char place_feeling, unsigned char genre_feeling);

@@ -1,17 +1,32 @@
 /************************************************
-File_Nameï¼šjudge_open_url.c
+File_Name:judge_open_url.c
 ************************************************/
+/* ŠÖ”ƒvƒƒgƒ^ƒCƒvéŒ¾ */
+// ŠO•”ŒöŠJŠÖ”
+void admin_judge_open_url(unsigned char purpose_of_use, unsigned char place_feeling, unsigned char genre_feeling);
 
-/* é–¢æ•°ãƒ—ãƒ­ãƒˆã‚¿ã‚¤ãƒ—å®£è¨€ */
-void judge_open_url(unsigned char purpose_of_use, unsigned char charplace_feeling, unsigned char genre_feeling);
+// “à•”ŠÖ”
+static void judge_open_url_place_umeda_private(unsigned char genre_feeling);
+static void judge_open_url_place_umeda_party_organize(unsigned char genre_feeling);
+static void judge_open_url_place_temma_private(unsigned char genre_feeling);
+static void judge_open_url_place_temma_party_organize(unsigned char genre_feeling);
+static void judge_open_url_place_namba_private(unsigned char genre_feeling);
+static void judge_open_url_place_namba_party_organize(unsigned char genre_feeling);
+static void judge_open_url_place_shinsekai_private(unsigned char genre_feeling);
+static void judge_open_url_place_shinsekai_party_organize(unsigned char genre_feeling);
+static void judge_open_url_place_tennoji_private(unsigned char genre_feeling);
+static void judge_open_url_place_tennoji_party_organize(unsigned char genre_feeling);
+static void judge_open_url_place_sakaihigashi_private(unsigned char genre_feeling);
+static void judge_open_url_place_sakaihigashi_party_organize(unsigned char genre_feeling);
 
-/* åˆ©ç”¨ç”¨é€” */
+/* —ñ‹“Œ^ */
+// —˜—p—p“r
 enum PurposeOfUse {
     PURPOSE_OF_USE_PRIVATE = 0,
     PURPOSE_OF_USE_PARTY_ORGANIZE,
 };
 
-/* åœ°åŸŸ */
+// ’nˆæ
 enum PlaceFeeling {
     PLACE_FEELING_UMEDA = 0,
     PLACE_FEELING_TEMMA,
@@ -22,7 +37,7 @@ enum PlaceFeeling {
     PLACE_FEELING_MAX = PLACE_FEELING_SAKAIHIGASHI,
 };
 
-/* ã‚¸ãƒ£ãƒ³ãƒ« */
+// ƒWƒƒƒ“ƒ‹
 enum Genre_Feeling {
     GENRE_FEELING_KUSHIYAKI = 0,
     GENRE_FEELING_SAEFOOD,
@@ -33,13 +48,419 @@ enum Genre_Feeling {
 };
 
 /************************************************
-Purposeï¼šææ¡ˆã™ã‚‹ãŠåº—ã‚’åˆ¤å®šã—ã€è©²å½“ã™ã‚‹WEBã‚µã‚¤ãƒˆã‚’é–‹ã
-argument1ï¼šåˆ©ç”¨ç”¨é€”æŒ‡å®šå€¤
-argument2ï¼šåœ°åŸŸæŒ‡å®šæŒ‡å®šå€¤
-argument3ï¼šã‚¸ãƒ£ãƒ³ãƒ«æŒ‡å®šå€¤
-returnï¼šNone
+PurposeFopen_URLŠÇ—
+argument1F—˜—p—p“rw’è’l
+argument2F’nˆæw’è’l
+argument3FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
 ************************************************/
-void judge_open_url(unsigned char purpose_of_use, unsigned char charplace_feeling, unsigned char genre_feeling)
+void admin_judge_open_url(unsigned char purpose_of_use, unsigned char place_feeling, unsigned char genre_feeling)
 {
-    ;
+    switch (place_feeling) {
+        case PLACE_FEELING_UMEDA:   // ”~“c
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_umeda_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_umeda_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        case PLACE_FEELING_TEMMA:   //@“V–
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_temma_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_temma_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        case PLACE_FEELING_NAMBA:   // ‚È‚ñ‚Î
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_namba_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_namba_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        case PLACE_FEELING_SHINSEKAI:   // V¢ŠE
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_shinsekai_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_shinsekai_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        case PLACE_FEELING_TENNOJI:     // “V‰¤›
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_tennoji_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_tennoji_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        case PLACE_FEELING_SAKAIHIGASHI:    // ä“Œ
+            switch (purpose_of_use) {
+                case PURPOSE_OF_USE_PRIVATE:            // ­l”—˜—p
+                    judge_open_url_place_sakaihigashi_private(genre_feeling);
+                    break;
+                case PURPOSE_OF_USE_PARTY_ORGANIZE:     // å–Š²–—˜—p
+                    judge_open_url_place_sakaihigashi_party_organize(genre_feeling);
+                    break;
+                default:
+                    ;   // do nothing
+                    break;
+            }
+            break;
+        default:
+            ;   // do nothing
+            break;
+    }
+}
+
+/************************************************
+PurposeF”~“c ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_umeda_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF”~“c ˆù‚İ‰®‚³‚ñå–Š²–—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_umeda_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF“V– ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_temma_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF“V– ˆù‚İ‰®‚³‚ñå–Š²–—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_temma_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF‚È‚ñ‚Î ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_namba_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF‚È‚ñ‚Î ˆù‚İ‰®‚³‚ñå–Š²– URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_namba_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeFV¢ŠE ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_shinsekai_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeFV¢ŠE ˆù‚İ‰®‚³‚ñå–Š²–—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_shinsekai_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF“V‰¤› ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_tennoji_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeF“V‰¤› ˆù‚İ‰®‚³‚ñå–Š²–—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_tennoji_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeFä“Œ ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_sakaihigashi_private(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
+}
+
+/************************************************
+PurposeFä“Œ ˆù‚İ‰®‚³‚ñ­l”—˜—p URL_OPEN”»’èŠÖ”
+argument1FƒWƒƒƒ“ƒ‹w’è’l
+returnFNone
+************************************************/
+void judge_open_url_place_sakaihigashi_party_organize(unsigned char genre_feeling)
+{
+    switch (genre_feeling) {
+        case GENRE_FEELING_KUSHIYAKI:
+            ;
+            break;
+        case GENRE_FEELING_SAEFOOD:
+            ;
+            break;
+        case GENRE_FEELING_TENPRA:
+            ;
+            break;
+        case GENRE_FEELING_NABE:
+            ;
+            break;
+        case GENRE_FEELING_WESTERNFOOD:
+            ;
+            break;
+
+    }
 }

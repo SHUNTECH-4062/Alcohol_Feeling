@@ -1,7 +1,6 @@
 /************************************************
 File_Name：main.c
 ************************************************/
-
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
@@ -26,7 +25,7 @@ int main(void)
     place_feeling = user_input_place_feeling();         // 地域指定
     genre_feeling = user_input_genre_feeling();         // ジャンル指定
 
-    judge_open_url(purpose_of_use, place_feeling, genre_feeling);
+    admin_judge_open_url(purpose_of_use, place_feeling, genre_feeling);
 
     return 0;
 }
