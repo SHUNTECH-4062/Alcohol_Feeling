@@ -4,10 +4,29 @@ File_Name：user_input.c
 #include<stdio.h>
 #include<stdlib.h>
 
+/* 関数プロトタイプ宣言 */
+// 外部公開関数
+void admin_user_input(unsigned char *purpose_of_use, unsigned char *place_feeling, unsigned char *genre_feeling);
+
 // 関数プロトタイプ宣言
-unsigned char user_input_purpose_of_use(void);
-unsigned char user_input_place_feeling(void);
-unsigned char user_input_genre_feeling(void);
+static unsigned char user_input_purpose_of_use(void);
+static unsigned char user_input_place_feeling(void);
+static unsigned char user_input_genre_feeling(void);
+
+
+/************************************************
+Purpose：open_URL管理
+argument1：利用用途指定値
+argument2：地域指定値
+argument3：ジャンル指定値
+return：None
+************************************************/
+void admin_user_input(unsigned char *purpose_of_use, unsigned char *place_feeling, unsigned char *genre_feeling)
+{
+    *purpose_of_use = user_input_purpose_of_use();
+    *place_feeling = user_input_place_feeling();
+    *genre_feeling = user_input_genre_feeling();
+}
 
 /************************************************
 Purpose：ユーザ入力_利用用途(少人数向けor主事幹事向け)
@@ -60,13 +79,11 @@ unsigned char user_input_genre_feeling(void)
     printf("***********************************************\n");
     printf("何系のお店を探していますか？ \n");
     printf("0:串焼き \n");
-    printf("1:焼肉 \n");
-    printf("2:しゃぶしゃぶ \n");
-    printf("3:すき焼き \n");
-    printf("4:海鮮 \n");
-    printf("5:寿司 \n");
-    printf("6:串カツ \n");
-    printf("7:天ぷら \n");
+    printf("1:海鮮 \n");
+    printf("2:天ぷら \n");
+    printf("3:串カツ \n");
+    printf("4:鍋 \n");
+    printf("5:洋食 \n");
     printf("8:その他逸品系統 \n");
     printf("***********************************************\n");
     scanf("%d", &genre_feeling);
